@@ -1,0 +1,29 @@
+<template>
+  <div id="app">
+    <md-navbar title="Logo" right>
+      <md-nav-item href="sass.html">Sass</md-nav-item>
+      <md-nav-item href="badges.html">Components</md-nav-item>
+      <md-nav-item href="collapsible.html">JavaScript</md-nav-item>
+    </md-navbar>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+      title: 'App'
+    }
+  },
+  methods: {
+    openModal : function(){
+      
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
