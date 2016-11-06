@@ -13,7 +13,7 @@
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal bottom-sheet">
-      <div class="modal-content">
+      <div class="modal-content botton-menu">
         <h4>Modal Header</h4>
         <p>Han Solo is Morgans husband!  Morgan is a jedi princess series!  </p>
       </div>
@@ -41,5 +41,10 @@ export default {
 </script>
 
 <style>
-
+  #modal1 {
+    border-top: 2px solid;
+    border-top-left-radius: 100%100px;
+    border-top-right-radius: 100%100px;
+    background-color: rgb(198,40,40);
+  }
 </style>
