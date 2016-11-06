@@ -45,6 +45,9 @@ module.exports = {
       //}
     ]
   },
+  //externals: {
+  //  jquery: 'jQuery'
+  //},
   plugins: [
     new IconsPlugin({
       fontName: 'icons',
@@ -62,11 +65,6 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
-  externals: {
-        // require("vue") is external and available
-        //  on the global var Vue
-        'vue': 'Vue'
-    },
   devtool: '#eval-source-map'
 }
 

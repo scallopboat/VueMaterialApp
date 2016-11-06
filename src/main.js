@@ -1,20 +1,14 @@
-import Vue from 'vue'
-import App from './App.vue'
+var Vue = require('vue');
+var App = require('./App.vue');
 
-//import 'materialize-css/node_modules/jquery/dist/jquery.min.js'
-//import 'materialize-css'
+// I don't know if webpack was the issue here or not... But importing jquery in vue was a pain..
+window.$ = window.jQuery = require('materialize-css/node_modules/jquery/dist/jquery.js'); 
+require('materialize-css');
 
-//import 'materialize-css/dist/css/materialize.min.css'
-//import './assets/app.css'
+require('materialize-css/dist/css/materialize.min.css');
+require('material-design-icons/iconfont/material-icons.css');
 
-// 1. Require the module 
-import VueMaterialComponents from 'vue-material-components'
-  
-// 2. Require the Materialize CSS (or import it in your HTML) 
-import 'vue-material-components/assets/css/materialize.min.css'
-import 'material-design-icons/iconfont/material-icons.css'
-
-Vue.use(VueMaterialComponents)
+require('./assets/app.css');
 
 /* eslint-disable no-new */
 var appInit = {
@@ -48,11 +42,12 @@ var appInit = {
 
   // Update DOM on a Received Event
   run() {
-    
-    // Use Vue material lib
-    
-    
     // Start app
+    $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    console.log("document ready!");
+    $('.modal').modal();
+  });
     new Vue({
       el: '#app',
       render: h => h(App)
