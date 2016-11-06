@@ -1,35 +1,69 @@
 <template>
   <div id="app">
+    
+    <!-- Header -->
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper red">
         <a href="#" class="brand-logo left">{{title}}</a>
-        <ul id="nav-mobile" class="right">
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
+        <ul id="nav-mobile" class="menu-icons right">
+          <li><i class="large material-icons">search</i></li>
+          <li><a class='dropdown-button' href='#' data-activates='dropdown1'><i class="large material-icons">sort</i></a></li>
         </ul>
       </div>
     </nav>
-    <a class="waves-effect waves-light btn" href="#modal1">Modal</a>
+    <!-- Header -->
+    
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a class="red-text" href="#!">Favorites</a></li>
+      <li><a class="red-text" href="#!">Recent Visits</a></li>
+      <li><a class="red-text" href="#!">Distance</a></li>
+    </ul>
+    <!-- Dropdown Structure -->
+    
+    <!-- Views -->
+    <settings v-if="view == 'settings'"></settings>
+    <groups v-if="view == 'groups'"></groups>
+    <locations v-if="view == 'locations'"></locations>
+    <map-view v-if="view == 'map-view'"></map-view>
+    <!-- Views -->
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal bottom-sheet">
-      <div class="modal-content botton-menu">
-        <h4>Modal Header</h4>
-        <p>Han Solo is Morgans husband!  Morgan is a jedi princess series!  </p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
+    <!-- FAB button toolbar -->
+    <div class="fixed-action-btn toolbar">
+      <a class="btn-floating btn-large red">
+        <i class="large material-icons">menu</i>
+      </a>
+      <ul>
+        <li class="waves-effect waves-light"><a v-on:click="view = 'settings'"><i class="material-icons">settings</i><span>Settings</span></a></li>
+        <li class="waves-effect waves-light"><a v-on:click="view = 'groups'"><i class="material-icons">group</i><span>Groups</span></a></li>
+        <li class="waves-effect waves-light"><a v-on:click="view = 'locations'"><i class="material-icons">store</i><span>Places</span></a></li>
+        <li class="waves-effect waves-light"><a v-on:click="view = 'map-view'"><i class="material-icons">map</i><span>Map</span></a></li>
+        <!--<li class="waves-effect waves-light"><a href="#!"><i class="material-icons">map</i><span>Map</span></a></li>-->
+      </ul>
     </div>
+    <!-- FAB button toolbar -->
+
   </div>
 </template>
 
 <script>
+var Settings = require('./settings.vue');
+var Locations = require('./locations.vue');
+var Groups = require('./groups.vue');
+var MapView = require('./map.vue');
+
 export default {
   name: 'app',
+  components: {
+    Settings,
+    Locations,
+    Groups,
+    MapView
+  },
   data () {
     return {
-      title: 'Morgan is great!'
+      title: 'AppTitle',
+      view: 'locations'
     }
   },
   methods: {
@@ -41,10 +75,9 @@ export default {
 </script>
 
 <style>
-  #modal1 {
-    border-top: 2px solid;
-    border-top-left-radius: 100%100px;
-    border-top-right-radius: 100%100px;
-    background-color: rgb(198,40,40);
+
+  .menu-icons > li {
+    padding-right: 10px;
   }
+
 </style>

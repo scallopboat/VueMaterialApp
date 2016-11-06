@@ -1,13 +1,13 @@
 <template>
-  <div id="restaurant-list">{{msg}}</div>
+  <div id="settings">{{msg}}</div>
 </template>
 
 <script>
 export default {
-  name: 'restaurant-list',
+  name: 'settings',
   data () {
     return {
-      msg: 'Restaurant List'
+      msg: 'settings'
     }
   }
 }
