@@ -1,1 +1,1 @@
-VueMaterialApp
+VueMaterialApp Demo
