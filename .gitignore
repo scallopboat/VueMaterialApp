@@ -1,2 +1,3 @@
 node_modules/
-dist/
+www/bundle.js
+www/css/lib/
