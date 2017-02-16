@@ -2,7 +2,7 @@ var fs = require("fs");
 var browserify = require('browserify');
 var vueify = require('vueify');
 
-browserify('www/main.js')
+browserify('src/main.js')
   .transform(vueify)
 //  .plugin('vueify/plugins/extract-css', {
 //    out: 'www/bundle.css' // can also be a WritableStream

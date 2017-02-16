@@ -22,6 +22,9 @@
       return {
         title: 'test'
       }
+    },
+    computed: {
+      
     }
   }
 </script>

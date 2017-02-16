@@ -1,15 +1,16 @@
 {
-  "name": "vue-material-phonegap",
+  "name": "vue-material-boilerplate",
   "version": "1.0.0",
   "description": "Vue Material App Boilerplate for Phonegap",
   "main": "src/main.js",
   "scripts": {
-    "build" : "node vueify-build.js",
+    "build": "node vueify-build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chris Meyer",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.22.0",
     "material-design-icons": "^3.0.1",
     "material-design-lite": "^1.3.0",
     "vue": "^2.1.10",
