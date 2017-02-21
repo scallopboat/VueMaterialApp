@@ -1,22 +1,22 @@
 <template>
   <div>
-    HEY
     <h2>{{title}}</h2>
     <ul>
-    <li v-for="p in products">
-      {{ p.title }} - {{ p.price | currency }}
-      <br>
-      <button
-        :disabled="!p.inventory"
-        @click="addToCart(p)">
+      <li v-for="p in products">
+        {{ p.title }} - {{ p.price | currency }}
+        <br>
+        <button :disabled="!p.inventory" @click="addToCart(p)">
         Add to cart
       </button>
-    </li>
-  </ul>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex'
+  import {
+    mapGetters,
+    mapActions
+  } from 'vuex'
 
   export default {
     name: 'app',
@@ -29,14 +29,14 @@ import { mapGetters, mapActions } from 'vuex'
       }
     },
     computed: mapGetters({
-    products: 'allProducts'
-  }),
-  methods: mapActions([
-    'addToCart'
-  ]),
-  created () {
-    this.$store.dispatch('getAllProducts')
-  }
+      products: 'allProducts'
+    }),
+    methods: mapActions([
+      'addToCart'
+    ]),
+    created() {
+      this.$store.dispatch('getAllProducts')
+    }
   }
 </script>
 <style>
