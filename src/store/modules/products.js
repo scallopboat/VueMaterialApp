@@ -1,4 +1,5 @@
 import shop from '../../api/shop'
+import server from '../../api/server-calls'
 import * as types from '../mutation-types'
 
 // initial state
