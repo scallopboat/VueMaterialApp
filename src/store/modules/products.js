@@ -1,5 +1,4 @@
-import shop from '../../api/shop'
-import server from '../../api/server-calls'
+import server from '../../api/server'
 import * as types from '../mutation-types'
 
 // initial state
@@ -15,7 +14,7 @@ const getters = {
 // actions
 const actions = {
   getAllProducts ({ commit }) {
-    shop.getProducts(products => {
+    server.getProducts(products => {
       commit(types.RECEIVE_PRODUCTS, { products })
     })
   }

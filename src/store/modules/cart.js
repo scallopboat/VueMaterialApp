@@ -1,4 +1,4 @@
-import shop from '../../api/shop'
+import server from '../../api/server'
 import * as types from '../mutation-types'
 
 // initial state
@@ -18,7 +18,7 @@ const actions = {
   checkout ({ commit, state }, products) {
     const savedCartItems = [...state.added]
     commit(types.CHECKOUT_REQUEST)
-    shop.buyProducts(
+    server.buyProducts(
       products,
       () => commit(types.CHECKOUT_SUCCESS),
       () => commit(types.CHECKOUT_FAILURE, { savedCartItems })
